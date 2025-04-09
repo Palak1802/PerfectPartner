@@ -1,8 +1,11 @@
 import screenName from '@navigation/screenName';
+import AdditionalPhoto from '@screens/auth/additionalPhoto/AdditionalPhoto';
 import CreateAccount from '@screens/auth/createAccount/CreateAccount';
 import CreateProfile from '@screens/auth/createProfile/CreateProfile';
 import EducationDetail from '@screens/auth/educationDetail/EducationDetail';
+import FamilyDetail from '@screens/auth/familyDetail/FamilyDetail';
 import GetStarted from '@screens/auth/getStarted/GetStarted';
+import Hobby from '@screens/auth/hobby/Hobby';
 import Login from '@screens/auth/login/Login';
 import OtherExtraDetail from '@screens/auth/otherExtraDetail/OtherExtraDetail';
 import Otp from '@screens/auth/otp/Otp';
@@ -40,5 +43,17 @@ export const authStackData = [
   {
     name: screenName.educationDetail,
     component: EducationDetail,
+  },
+  {
+    name: screenName.additionalPhoto,
+    component: AdditionalPhoto,
+  },
+  {
+    name: screenName.hobby,
+    component: Hobby,
+  },
+  {
+    name: screenName.familyDetail,
+    component: FamilyDetail,
   },
 ];

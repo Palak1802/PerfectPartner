@@ -7,7 +7,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: color.white,
   },
-
   modalFlatlistItemText: {
     fontSize: 16,
     color: color.black,
@@ -50,6 +49,10 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: 'rgba(0,0,0,0.3)',
     justifyContent: 'flex-end',
+  },
+  buttonContainer: {
+    marginHorizontal: 20,
+    marginBottom: 50,
   },
   scrollContainer: {
     flexGrow: 1,

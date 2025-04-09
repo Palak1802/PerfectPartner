@@ -1,6 +1,6 @@
 import {Button} from '@components';
 import color from '@theme/color';
-import React, {FC, RefObject} from 'react';
+import React, {RefObject} from 'react';
 import {
   KeyboardAvoidingView,
   Platform,
@@ -24,7 +24,7 @@ export interface VerifyOTPProps {
   navigateToLogin: () => void;
 }
 
-const Otp: FC = () => {
+const Otp: React.FC = () => {
   const {OTPRef, onSubmitEditing, onValidateVerifyOTP, setValue, value} =
     useOtp();
 
@@ -32,8 +32,7 @@ const Otp: FC = () => {
     <KeyboardAvoidingView
       style={styles.container}
       behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
-      <ScrollView
-        contentContainerStyle={{flexGrow: 1, justifyContent: 'center'}}>
+      <ScrollView contentContainerStyle={styles.scrollContainer}>
         <Text allowFontScaling={false} style={styles.headingText}>
           OTP Verification
         </Text>
@@ -72,14 +71,7 @@ const Otp: FC = () => {
             )}
           />
         </View>
-        <TouchableOpacity
-          activeOpacity={0.7}
-          style={{
-            marginTop: 18,
-            alignSelf: 'flex-end',
-            marginRight: 20,
-            padding: 5,
-          }}>
+        <TouchableOpacity activeOpacity={0.7} style={styles.resendTouch}>
           <Text allowFontScaling={false} style={styles.resendOtp}>
             Resend OTP
           </Text>

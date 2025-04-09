@@ -5,6 +5,7 @@ import {
   ScrollView,
   FlatList,
   TouchableOpacity,
+  Platform,
 } from 'react-native';
 import React from 'react';
 import styles from './createProfile.style';
@@ -17,20 +18,22 @@ import {
 } from '@components';
 import useCreateProfile from './useCreateProfile';
 import svgIndex from '@svgIndex';
-import color from '@theme/color';
-import fonts from '@theme/fonts';
 import SvgIndex from '@svgIndex';
+import {genderList} from './createProfile.const';
 
 const CreateProfile: React.FC = () => {
   const {value, setValue, onNext, onGenderClick, onCloseModal, onPressItem} =
     useCreateProfile();
-  console.log(value?.genderModal);
   return (
     <View style={styles.container}>
       <CustomStatusBar />
       <Header title="Create Profile" />
-      <KeyboardAvoidingView style={{flex: 1, marginTop: 10}}>
-        <ScrollView contentContainerStyle={{flexGrow: 1, paddingBottom: 40}}>
+      <KeyboardAvoidingView
+        style={styles.keyboardStyle}
+        behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
+        <ScrollView
+          contentContainerStyle={styles.scrollContainer}
+          showsVerticalScrollIndicator={false}>
           <Input
             value={value.firstName}
             onChangeText={(text: string) =>
@@ -60,19 +63,14 @@ const CreateProfile: React.FC = () => {
             }
             placeholder="Email"
           />
-          <View style={{flexDirection: 'row', alignItems: 'center'}}>
+          <View style={styles.rowContainer}>
             <Input
               value={value.gender}
               onChangeText={(text: string) =>
                 setValue('gender', text?.toLocaleLowerCase())
               }
               placeholder="Gender"
-              containerStyle={{
-                width: '45%',
-                marginHorizontal: 0,
-                marginLeft: 20,
-                marginRight: 10,
-              }}
+              containerStyle={styles.genderInputContainer}
               editable={false}
               rightIcon={svgIndex.DownArrow}
               onRightIcon={onGenderClick}
@@ -83,11 +81,7 @@ const CreateProfile: React.FC = () => {
                 setValue('dateOfBirth', text?.toLocaleLowerCase())
               }
               placeholder="Date of Birth"
-              containerStyle={{
-                width: '42%',
-                marginHorizontal: 0,
-                marginRight: 20,
-              }}
+              containerStyle={styles.dobInputContainer}
             />
           </View>
           <Input
@@ -114,76 +108,41 @@ const CreateProfile: React.FC = () => {
               setValue('aboutUs', text?.toLocaleLowerCase())
             }
             placeholder="About Us"
-            mainContainerStyle={{height: 120, paddingTop: 12}}
+            mainContainerStyle={styles.aboutUsMainContainer}
             inputProps={{multiline: true, textAlignVertical: 'top'}}
-          />
-          <Button
-            title="NEXT"
-            onPress={onNext}
-            containerStyle={{marginHorizontal: 20, marginTop: 80}}
           />
         </ScrollView>
       </KeyboardAvoidingView>
+      <Button
+        title="Next"
+        onPress={onNext}
+        containerStyle={styles.buttonContainer}
+      />
       <ModalComponent
         visible={value.genderModal}
         onRequestClose={onCloseModal}
-        containerStyle={{
-          flex: 1,
-          backgroundColor: 'rgba(0,0,0,0.3)',
-          justifyContent: 'flex-end',
-        }}>
-        <View
-          style={{
-            backgroundColor: 'white',
-            paddingTop: 30,
-            borderTopRightRadius: 15,
-            borderTopLeftRadius: 15,
-          }}>
-          <View style={{flexDirection: 'row', alignItems: 'center'}}>
-            <Text
-              style={{
-                fontSize: 16,
-                color: color.black,
-                fontFamily: fonts.montserratSemiBold,
-                marginHorizontal: 25,
-                marginBottom: 12,
-                flex: 1,
-              }}>
-              Gender
-            </Text>
+        containerStyle={styles.modalContainer}>
+        <View style={styles.modalMainContainer}>
+          <View style={styles.rowContainer}>
+            <Text style={styles.modalHeaderText}>Gender</Text>
             <TouchableOpacity
               activeOpacity={0.7}
               onPress={onCloseModal}
-              style={{
-                marginRight: 15,
-                marginBottom: 8,
-                padding: 5,
-              }}>
+              style={styles.closeIcon}>
               <SvgIndex.BackIcon height={20} width={20} />
             </TouchableOpacity>
           </View>
           <FlatList
-            data={['Female', 'Male', 'Others']}
-            contentContainerStyle={{flexGrow: 1, paddingBottom: 20}}
+            data={genderList}
+            contentContainerStyle={styles.flatlistContainer}
+            showsVerticalScrollIndicator={false}
             renderItem={({item, index}) => {
               return (
                 <TouchableOpacity
                   activeOpacity={0.7}
                   onPress={() => onPressItem(item)}
-                  style={{
-                    marginHorizontal: 15,
-                    paddingHorizontal: 15,
-                    paddingVertical: 8,
-                    marginVertical: 5,
-                  }}>
-                  <Text
-                    style={{
-                      fontSize: 16,
-                      color: color.black,
-                      fontFamily: fonts.montserratRegular,
-                    }}>
-                    {item}
-                  </Text>
+                  style={styles.flatlistItemTouch}>
+                  <Text style={styles.flatlistItemText}>{item}</Text>
                 </TouchableOpacity>
               );
             }}

@@ -1,6 +1,8 @@
+import {useAuthNavigation} from '@hooks/useAppNavigation';
 import useAppState from '@hooks/useAppState';
 
 const useSocialDetail = () => {
+  const navigation = useAuthNavigation();
   const [value, setValue] = useAppState({
     religion: undefined,
     community: undefined,
@@ -21,26 +23,41 @@ const useSocialDetail = () => {
       setValue('communityModal', !value?.communityModal);
     } else if (type === 'livingIn') {
       setValue('livingInModal', !value?.livingInModal);
+    } else if (type === 'state') {
+      setValue('stateModal', !value?.stateModal);
+    } else if (type === 'city') {
+      setValue('cityModal', !value?.cityModal);
     }
   };
   const onCloseModal = () => {
-    setValue('religionModal', !value?.religionModal);
-    setValue('communityModal', !value?.communityModal);
-    setValue('livingInModal', !value?.livingInModal);
+    setValue('religionModal', false);
+    setValue('communityModal', false);
+    setValue('livingInModal', false);
+    setValue('stateModal', false);
+    setValue('cityModal', false);
   };
-  const onPressReligionItem = (item: any, type: string) => {
+  const onPressReligionItem = (item: string, type: string) => {
     if (type === 'religion') {
-      setValue('religionModal', !value?.religionModal);
+      setValue('religionModal', false);
       setValue('religion', item);
     } else if (type === 'community') {
-      setValue('communityModal', !value?.communityModal);
+      setValue('communityModal', false);
       setValue('community', item);
     } else if (type === 'livingIn') {
-      setValue('livingInModal', !value?.livingInModal);
+      setValue('livingInModal', false);
       setValue('livingIn', item);
+    } else if (type === 'state') {
+      setValue('stateModal', false);
+      setValue('state', item);
+    } else if (type === 'city') {
+      setValue('cityModal', false);
+      setValue('city', item);
     }
   };
-  return {value, onInputClick, onCloseModal, onPressReligionItem};
+  const onNextPress = () => {
+    navigation.navigate('otherExtraDetail');
+  };
+  return {value, onInputClick, onCloseModal, onPressReligionItem, onNextPress};
 };
 
 export default useSocialDetail;

@@ -79,6 +79,16 @@ const styles = StyleSheet.create({
     marginHorizontal: 20,
     marginTop: 30,
   },
+  resendTouch: {
+    marginTop: 18,
+    alignSelf: 'flex-end',
+    marginRight: 20,
+    padding: 5,
+  },
+  scrollContainer: {
+    flexGrow: 1,
+    justifyContent: 'center',
+  },
 });
 
 export default styles;

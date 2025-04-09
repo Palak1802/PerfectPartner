@@ -7,4 +7,7 @@ export default {
   socialDetail: 'socialDetail',
   otherExtraDetail: 'otherExtraDetail',
   educationDetail: 'educationDetail',
+  additionalPhoto: 'additionalPhoto',
+  hobby: 'hobby',
+  familyDetail: 'familyDetail',
 };

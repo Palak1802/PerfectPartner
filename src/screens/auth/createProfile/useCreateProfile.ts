@@ -32,10 +32,10 @@ const useCreateProfile = () => {
     setValue('genderModal', !value?.genderModal);
   };
   const onCloseModal = () => {
-    setValue('genderModal', !value?.genderModal);
+    setValue('genderModal', false);
   };
-  const onPressItem = (item: any) => {
-    setValue('genderModal', !value?.genderModal);
+  const onPressItem = (item: string) => {
+    setValue('genderModal', false);
     setValue('gender', item);
   };
   return {value, setValue, onNext, onGenderClick, onCloseModal, onPressItem};

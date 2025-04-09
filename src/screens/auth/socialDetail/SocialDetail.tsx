@@ -9,14 +9,20 @@ import {
 } from 'react-native';
 import React from 'react';
 import styles from './socialDetail.style';
-import {CustomStatusBar, Header, Input, ModalComponent} from '@components';
+import {
+  Button,
+  CustomStatusBar,
+  Header,
+  Input,
+  ModalComponent,
+} from '@components';
 import svgIndex from '@svgIndex';
 import useSocialDetail from './useSocialDetail';
 import SvgIndex from '@svgIndex';
 import {communityConst, religionConst} from './socialDetail.const';
 
 const SocialDetail: React.FC = () => {
-  const {value, onInputClick, onCloseModal, onPressReligionItem} =
+  const {value, onInputClick, onCloseModal, onPressReligionItem, onNextPress} =
     useSocialDetail();
   return (
     <View style={styles.container}>
@@ -65,6 +71,11 @@ const SocialDetail: React.FC = () => {
           />
         </ScrollView>
       </KeyboardAvoidingView>
+      <Button
+        onPress={onNextPress}
+        title="Next"
+        containerStyle={styles.buttonContainer}
+      />
       <ModalComponent
         visible={value.religionModal}
         onRequestClose={onCloseModal}
@@ -82,6 +93,7 @@ const SocialDetail: React.FC = () => {
           <FlatList
             data={religionConst}
             contentContainerStyle={styles.modalFlatlistContainer}
+            showsVerticalScrollIndicator={false}
             renderItem={({item, index}) => {
               return (
                 <TouchableOpacity
@@ -112,6 +124,7 @@ const SocialDetail: React.FC = () => {
           <FlatList
             data={communityConst}
             contentContainerStyle={styles.modalFlatlistContainer}
+            showsVerticalScrollIndicator={false}
             renderItem={({item, index}) => {
               return (
                 <TouchableOpacity
@@ -142,6 +155,7 @@ const SocialDetail: React.FC = () => {
           <FlatList
             data={['Female', 'Male', 'Others']}
             contentContainerStyle={styles.modalFlatlistContainer}
+            showsVerticalScrollIndicator={false}
             renderItem={({item, index}) => {
               return (
                 <TouchableOpacity
@@ -172,6 +186,7 @@ const SocialDetail: React.FC = () => {
           <FlatList
             data={['Female', 'Male', 'Others']}
             contentContainerStyle={styles.modalFlatlistContainer}
+            showsVerticalScrollIndicator={false}
             renderItem={({item, index}) => {
               return (
                 <TouchableOpacity
@@ -202,6 +217,7 @@ const SocialDetail: React.FC = () => {
           <FlatList
             data={['Female', 'Male', 'Others']}
             contentContainerStyle={styles.modalFlatlistContainer}
+            showsVerticalScrollIndicator={false}
             renderItem={({item, index}) => {
               return (
                 <TouchableOpacity

@@ -7,6 +7,9 @@ export type AuthStackParams = {
   socialDetail: undefined;
   otherExtraDetail: undefined;
   educationDetail: undefined;
+  additionalPhoto: undefined;
+  hobby: undefined;
+  familyDetail: undefined;
 };
 
 export type AuthNavigationProps = StackNavigationProp<AuthStackParams>;
