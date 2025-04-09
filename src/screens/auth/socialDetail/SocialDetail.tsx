@@ -27,7 +27,7 @@ const SocialDetail: React.FC = () => {
   return (
     <View style={styles.container}>
       <CustomStatusBar />
-      <Header back title="Social Detail" />
+      <Header title="Social Detail" />
       <KeyboardAvoidingView
         style={styles.keyboardStyle}
         behavior={Platform.OS === 'ios' ? 'padding' : undefined}>

@@ -38,7 +38,7 @@ const OtherExtraDetail: React.FC = () => {
   return (
     <View style={styles.container}>
       <CustomStatusBar />
-      <Header title={`Now let's fill your other detail`} back />
+      <Header title={`Now let's fill your other detail`} />
       <KeyboardAvoidingView
         style={styles.keyboardStyle}
         behavior={Platform.OS === 'ios' ? 'padding' : undefined}>

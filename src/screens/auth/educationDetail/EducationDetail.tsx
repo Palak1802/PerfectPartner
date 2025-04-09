@@ -37,7 +37,7 @@ const EducationDetail: React.FC = () => {
   return (
     <View style={styles.container}>
       <CustomStatusBar />
-      <Header back title="Education & career detail" />
+      <Header title="Education & career detail" />
       <KeyboardAvoidingView
         style={styles.keyboardStyle}
         behavior={Platform.OS === 'ios' ? 'padding' : undefined}>

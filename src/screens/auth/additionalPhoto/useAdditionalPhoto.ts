@@ -7,7 +7,8 @@ const useAdditionalPhoto = () => {
   const onNextPress = () => {
     // navigation.navigate('')
   };
-  return {};
+  const onPressItem = (index: number) => {};
+  return {onPressItem};
 };
 
 export default useAdditionalPhoto;

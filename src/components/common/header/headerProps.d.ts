@@ -7,5 +7,5 @@ interface HeaderProps {
   backgroundColor?: string;
   title?: string;
   backIcon?: () => void;
-  back?: boolean;
+  leftText?: boolean;
 }
