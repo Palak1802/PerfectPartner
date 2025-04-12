@@ -7,10 +7,11 @@ import {
   TouchableOpacity,
   Platform,
 } from 'react-native';
-import React from 'react';
+import React, {useState} from 'react';
 import styles from './createProfile.style';
 import {
   Button,
+  CountryCodeInputDropdown,
   CustomStatusBar,
   Header,
   Input,
@@ -48,13 +49,16 @@ const CreateProfile: React.FC = () => {
             }
             placeholder="Last name"
           />
-          <Input
-            value={value.mobile}
-            onChangeText={(text: string) =>
-              setValue('mobile', text?.toLocaleLowerCase())
+          <CountryCodeInputDropdown
+            setSelectedCountry={(item: any) =>
+              setValue('countryCode', item?.dialling_code)
             }
             placeholder="Mobile Number"
+            selectedCountry={value?.countryCode ?? '+91'}
+            inputValue={value?.mobile}
+            setValue={(text: string) => setValue('mobile', text)}
             inputProps={{keyboardType: 'numeric'}}
+            maxLength={10}
           />
           <Input
             value={value.email}

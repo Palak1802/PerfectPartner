@@ -2,6 +2,7 @@ interface CreateProfileValueProps {
   firstName: string | undefined;
   lastName: string | undefined;
   mobile: string | undefined;
+  countryCode: string | undefined;
   email: string | undefined;
   gender: string | undefined;
   dateOfBirth: string | undefined;

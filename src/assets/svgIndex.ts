@@ -1,6 +1,7 @@
 import BackIcon from './svg/backIcon';
 import Boy from './svg/boy';
 import Chat from './svg/chat';
+import Close from './svg/close';
 import DownArrow from './svg/downArrow';
 import Favourite from './svg/favourite';
 import Female from './svg/female';
@@ -12,6 +13,7 @@ import LeftArrowFill from './svg/leftArrowFill';
 import Male from './svg/male';
 import Menu from './svg/menu';
 import MultipleUser from './svg/multipleUser';
+import Search from './svg/search';
 import UnHideIcon from './svg/unHideEye';
 import UserIcon from './svg/userIcon';
 
@@ -32,4 +34,6 @@ export default {
   MultipleUser,
   UnHideIcon,
   UserIcon,
+  Close,
+  Search,
 };

@@ -7,6 +7,7 @@ const useCreateProfile = () => {
     firstName: undefined,
     lastName: undefined,
     mobile: undefined,
+    countryCode: undefined,
     email: undefined,
     gender: undefined,
     dateOfBirth: undefined,
