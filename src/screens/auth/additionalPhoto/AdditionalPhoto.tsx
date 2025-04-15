@@ -10,14 +10,19 @@ import {
 import React from 'react';
 import styles from './additionalPhoto.style';
 import useAdditionalPhoto from './useAdditionalPhoto';
-import {CustomStatusBar, Header} from '@components';
+import {Button, CustomStatusBar, Header} from '@components';
 
 const AdditionalPhoto: React.FC = () => {
-  const {onPressItem} = useAdditionalPhoto();
+  const {onPressItem, selectImage, onPressLeftText, onNextPress} =
+    useAdditionalPhoto();
   return (
     <View style={styles.container}>
       <CustomStatusBar />
-      <Header title="Additional Photos" leftText />
+      <Header
+        title="Additional Photos"
+        leftText
+        onPressLeftText={onPressLeftText}
+      />
       <KeyboardAvoidingView
         style={styles.keyboardStyle}
         behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
@@ -34,7 +39,7 @@ const AdditionalPhoto: React.FC = () => {
               return (
                 <TouchableOpacity
                   activeOpacity={0.7}
-                  onPress={() => onPressItem(index)}
+                  onPress={() => selectImage(index)}
                   style={styles.itemBorder}>
                   <Text>{index + 1}</Text>
                 </TouchableOpacity>
@@ -43,6 +48,11 @@ const AdditionalPhoto: React.FC = () => {
           />
         </ScrollView>
       </KeyboardAvoidingView>
+      <Button
+        onPress={onNextPress}
+        title="Next"
+        containerStyle={styles.buttonContainer}
+      />
     </View>
   );
 };

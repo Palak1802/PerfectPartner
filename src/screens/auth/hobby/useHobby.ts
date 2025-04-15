@@ -7,7 +7,8 @@ const useHobby = () => {
   const onNextPress = () => {
     // navigation.navigate('')
   };
-  return {};
+  const onPressLeftText = () => {};
+  return {onPressLeftText};
 };
 
 export default useHobby;

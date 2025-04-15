@@ -7,5 +7,6 @@ interface HeaderProps {
   backgroundColor?: string;
   title?: string;
   backIcon?: () => void;
+  onPressLeftText?: () => void;
   leftText?: boolean;
 }

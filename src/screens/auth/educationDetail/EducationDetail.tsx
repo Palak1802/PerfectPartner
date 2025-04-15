@@ -49,13 +49,14 @@ const EducationDetail: React.FC = () => {
             value={value?.study}
             editable={false}
             rightIcon={svgIndex.DownArrow}
-            onRightIcon={() => onInputPress('study')}
+            onPressInput={() => onInputPress('study')}
           />
           {value?.study && (
             <Input
               placeholder="School/College Name"
               value={value?.schoolName}
               onChangeText={(text: string) => setValue('schoolName', text)}
+              disabled
             />
           )}
           <Input
@@ -63,7 +64,7 @@ const EducationDetail: React.FC = () => {
             value={value?.sector}
             editable={false}
             rightIcon={svgIndex.DownArrow}
-            onRightIcon={() => onInputPress('sector')}
+            onPressInput={() => onInputPress('sector')}
           />
           {value?.sector && (
             <>
@@ -71,6 +72,7 @@ const EducationDetail: React.FC = () => {
                 placeholder="You work as"
                 value={value?.workAs}
                 onChangeText={(text: string) => setValue('workAs', text)}
+                disabled
               />
               <Input
                 placeholder="Your current company name"
@@ -78,6 +80,7 @@ const EducationDetail: React.FC = () => {
                 onChangeText={(text: string) =>
                   setValue('currentCompany', text)
                 }
+                disabled
               />
             </>
           )}
@@ -87,7 +90,7 @@ const EducationDetail: React.FC = () => {
               value={value?.ctc}
               editable={false}
               rightIcon={svgIndex.DownArrow}
-              onRightIcon={() => onInputPress('CTC')}
+              onPressInput={() => onInputPress('CTC')}
             />
           )}
         </ScrollView>
@@ -108,7 +111,7 @@ const EducationDetail: React.FC = () => {
               activeOpacity={0.7}
               onPress={onCloseModal}
               style={styles.modalCloseTouch}>
-              <SvgIndex.BackIcon height={20} width={20} />
+              <SvgIndex.Close height={20} width={20} />
             </TouchableOpacity>
           </View>
           <FlatList
@@ -139,7 +142,7 @@ const EducationDetail: React.FC = () => {
               activeOpacity={0.7}
               onPress={onCloseModal}
               style={styles.modalCloseTouch}>
-              <SvgIndex.BackIcon height={20} width={20} />
+              <SvgIndex.Close height={20} width={20} />
             </TouchableOpacity>
           </View>
           <FlatList
@@ -170,7 +173,7 @@ const EducationDetail: React.FC = () => {
               activeOpacity={0.7}
               onPress={onCloseModal}
               style={styles.modalCloseTouch}>
-              <SvgIndex.BackIcon height={20} width={20} />
+              <SvgIndex.Close height={20} width={20} />
             </TouchableOpacity>
           </View>
           <FlatList

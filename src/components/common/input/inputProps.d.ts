@@ -21,4 +21,6 @@ export interface InputProps {
   rightText?: boolean | string;
   rightIconStyle?: StyleProp<ViewStyle>;
   editable?: boolean;
+  disabled?: boolean;
+  onPressInput?: () => void;
 }

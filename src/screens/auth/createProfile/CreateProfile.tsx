@@ -41,6 +41,7 @@ const CreateProfile: React.FC = () => {
               setValue('firstName', text?.toLocaleLowerCase())
             }
             placeholder="First name"
+            disabled
           />
           <Input
             value={value.lastName}
@@ -48,6 +49,7 @@ const CreateProfile: React.FC = () => {
               setValue('lastName', text?.toLocaleLowerCase())
             }
             placeholder="Last name"
+            disabled
           />
           <CountryCodeInputDropdown
             setSelectedCountry={(item: any) =>
@@ -66,18 +68,16 @@ const CreateProfile: React.FC = () => {
               setValue('email', text?.toLocaleLowerCase())
             }
             placeholder="Email"
+            disabled
           />
           <View style={styles.rowContainer}>
             <Input
               value={value.gender}
-              onChangeText={(text: string) =>
-                setValue('gender', text?.toLocaleLowerCase())
-              }
               placeholder="Gender"
               containerStyle={styles.genderInputContainer}
               editable={false}
               rightIcon={svgIndex.DownArrow}
-              onRightIcon={onGenderClick}
+              onPressInput={onGenderClick}
             />
             <Input
               value={value.dateOfBirth}
@@ -86,6 +86,7 @@ const CreateProfile: React.FC = () => {
               }
               placeholder="Date of Birth"
               containerStyle={styles.dobInputContainer}
+              disabled
             />
           </View>
           <Input
@@ -95,6 +96,7 @@ const CreateProfile: React.FC = () => {
             }
             placeholder="Password"
             hideText
+            disabled
             secureTextEntry
           />
           <Input
@@ -104,6 +106,7 @@ const CreateProfile: React.FC = () => {
             }
             placeholder="Confirm Password"
             hideText
+            disabled
             secureTextEntry
           />
           <Input
@@ -112,6 +115,7 @@ const CreateProfile: React.FC = () => {
               setValue('aboutUs', text?.toLocaleLowerCase())
             }
             placeholder="About Us"
+            disabled
             mainContainerStyle={styles.aboutUsMainContainer}
             inputProps={{multiline: true, textAlignVertical: 'top'}}
           />
@@ -133,7 +137,7 @@ const CreateProfile: React.FC = () => {
               activeOpacity={0.7}
               onPress={onCloseModal}
               style={styles.closeIcon}>
-              <SvgIndex.BackIcon height={20} width={20} />
+              <SvgIndex.Close height={20} width={20} />
             </TouchableOpacity>
           </View>
           <FlatList

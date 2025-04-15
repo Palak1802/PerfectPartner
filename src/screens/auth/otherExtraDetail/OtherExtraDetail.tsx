@@ -50,7 +50,7 @@ const OtherExtraDetail: React.FC = () => {
             value={value?.maritalStatus}
             editable={false}
             rightIcon={svgIndex.DownArrow}
-            onRightIcon={() => onInputClick('marital')}
+            onPressInput={() => onInputClick('marital')}
           />
           {value?.isChildren && (
             <Input
@@ -58,7 +58,7 @@ const OtherExtraDetail: React.FC = () => {
               value={value?.children}
               editable={false}
               rightIcon={svgIndex.DownArrow}
-              onRightIcon={() => onInputClick('children')}
+              onPressInput={() => onInputClick('children')}
             />
           )}
           <Input
@@ -66,19 +66,20 @@ const OtherExtraDetail: React.FC = () => {
             value={value?.diet}
             editable={false}
             rightIcon={svgIndex.DownArrow}
-            onRightIcon={() => onInputClick('diet')}
+            onPressInput={() => onInputClick('diet')}
           />
           <Input
             placeholder="Your height"
             value={value?.height}
             editable={false}
             rightIcon={svgIndex.DownArrow}
-            onRightIcon={() => onInputClick('height')}
+            onPressInput={() => onInputClick('height')}
           />
           <Input
             placeholder="Community (surname)"
             value={value?.community}
             onChangeText={(text: string) => setValue('community', text)}
+            disabled
           />
         </ScrollView>
       </KeyboardAvoidingView>
@@ -98,7 +99,7 @@ const OtherExtraDetail: React.FC = () => {
               activeOpacity={0.7}
               onPress={onCloseModal}
               style={styles.modalCloseTouch}>
-              <SvgIndex.BackIcon height={20} width={20} />
+              <SvgIndex.Close height={20} width={20} />
             </TouchableOpacity>
           </View>
           <FlatList
@@ -130,7 +131,7 @@ const OtherExtraDetail: React.FC = () => {
               activeOpacity={0.7}
               onPress={onCloseModal}
               style={styles.modalCloseTouch}>
-              <SvgIndex.BackIcon height={20} width={20} />
+              <SvgIndex.Close height={20} width={20} />
             </TouchableOpacity>
           </View>
           <FlatList
@@ -162,7 +163,7 @@ const OtherExtraDetail: React.FC = () => {
               activeOpacity={0.7}
               onPress={onCloseModal}
               style={styles.modalCloseTouch}>
-              <SvgIndex.BackIcon height={20} width={20} />
+              <SvgIndex.Close height={20} width={20} />
             </TouchableOpacity>
           </View>
           <FlatList
@@ -194,7 +195,7 @@ const OtherExtraDetail: React.FC = () => {
               activeOpacity={0.7}
               onPress={onCloseModal}
               style={styles.modalCloseTouch}>
-              <SvgIndex.BackIcon height={20} width={20} />
+              <SvgIndex.Close height={20} width={20} />
             </TouchableOpacity>
           </View>
           <FlatList

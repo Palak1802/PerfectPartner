@@ -37,5 +37,9 @@ const styles = StyleSheet.create({
     fontSize: 22,
     color: color.black,
   },
+  buttonContainer: {
+    marginHorizontal: 20,
+    marginBottom: 50,
+  },
 });
 export default styles;

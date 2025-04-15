@@ -25,13 +25,17 @@ const Input: React.FC<InputProps> = props => {
           {props?.label}
         </Text>
       )}
-      <View style={[style.container, props.mainContainerStyle]}>
+      <TouchableOpacity
+        activeOpacity={0.7}
+        disabled={props.disabled}
+        onPress={props.onPressInput}
+        style={[style.container, props.mainContainerStyle]}>
         <TextInput
           value={props.value}
           onChangeText={props.onChangeText}
           style={[style.input, props.inputStyle]}
           placeholder={props.placeholder}
-          placeholderTextColor={color.black && props.placeholderColor}
+          placeholderTextColor={color.lightGrey && props.placeholderColor}
           allowFontScaling={false}
           autoCorrect={false}
           cursorColor={color.black}
@@ -72,7 +76,7 @@ const Input: React.FC<InputProps> = props => {
             </TouchableOpacity>
           </View>
         )}
-      </View>
+      </TouchableOpacity>
       {props.error && <Text style={style.error}>{props.error}</Text>}
     </View>
   );

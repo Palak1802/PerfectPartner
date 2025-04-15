@@ -11,6 +11,7 @@ const Header: React.FC<HeaderProps> = ({
   title,
   backIcon,
   leftText,
+  onPressLeftText,
 }) => {
   const navigation = useAuthNavigation();
   return (
@@ -39,9 +40,7 @@ const Header: React.FC<HeaderProps> = ({
           style={style.backIconContainer}
           activeOpacity={0.5}
           hitSlop={20}
-          onPress={() => {
-            backIcon ? backIcon() : navigation.goBack();
-          }}>
+          onPress={onPressLeftText}>
           {leftText && <Text>Skip</Text>}
         </TouchableOpacity>
       </View>
