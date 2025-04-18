@@ -10,6 +10,7 @@ export type AuthStackParams = {
   additionalPhoto: undefined;
   hobby: undefined;
   familyDetail: undefined;
+  bottomTab: undefined;
 };
 
 export type AuthNavigationProps = StackNavigationProp<AuthStackParams>;

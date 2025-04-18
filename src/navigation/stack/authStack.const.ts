@@ -1,3 +1,4 @@
+import BottomTab from '@navigation/bottomTab/BottomTab';
 import screenName from '@navigation/screenName';
 import AdditionalPhoto from '@screens/auth/additionalPhoto/AdditionalPhoto';
 import CreateAccount from '@screens/auth/createAccount/CreateAccount';
@@ -55,5 +56,9 @@ export const authStackData = [
   {
     name: screenName.familyDetail,
     component: FamilyDetail,
+  },
+  {
+    name: screenName.bottomTab,
+    component: BottomTab,
   },
 ];

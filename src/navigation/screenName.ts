@@ -10,4 +10,5 @@ export default {
   additionalPhoto: 'additionalPhoto',
   hobby: 'hobby',
   familyDetail: 'familyDetail',
+  bottomTab: 'bottomTab',
 };
