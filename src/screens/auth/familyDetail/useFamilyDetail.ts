@@ -24,7 +24,7 @@ const useFamilyDetail = () => {
     sisterStatusModal: false,
   });
   const onNextPress = () => {
-    // navigation.navigate('')
+    navigation.navigate('bottomTab');
   };
   const onPressLeftText = () => {};
   const onPressItem = (item: string, type: string) => {

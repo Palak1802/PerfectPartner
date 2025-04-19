@@ -10,8 +10,9 @@ const Header: React.FC<HeaderProps> = ({
   backgroundColor,
   title,
   backIcon,
-  leftText,
+  rightText,
   onPressLeftText,
+  leftIcon,
 }) => {
   const navigation = useAuthNavigation();
   return (
@@ -24,15 +25,17 @@ const Header: React.FC<HeaderProps> = ({
         },
       ]}>
       <View style={style.container}>
-        <TouchableOpacity
-          style={style.backIconContainer}
-          activeOpacity={0.5}
-          hitSlop={20}
-          onPress={() => {
-            backIcon ? backIcon() : navigation.goBack();
-          }}>
-          <SvgIndex.BackIcon />
-        </TouchableOpacity>
+        {!leftIcon && (
+          <TouchableOpacity
+            style={style.backIconContainer}
+            activeOpacity={0.5}
+            hitSlop={20}
+            onPress={() => {
+              backIcon ? backIcon() : navigation.goBack();
+            }}>
+            <SvgIndex.BackIcon />
+          </TouchableOpacity>
+        )}
         <Text style={style.title} numberOfLines={1}>
           {title}
         </Text>
@@ -41,7 +44,7 @@ const Header: React.FC<HeaderProps> = ({
           activeOpacity={0.5}
           hitSlop={20}
           onPress={onPressLeftText}>
-          {leftText && <Text>Skip</Text>}
+          {rightText && <Text>Skip</Text>}
         </TouchableOpacity>
       </View>
     </View>

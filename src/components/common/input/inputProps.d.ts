@@ -17,7 +17,6 @@ export interface InputProps {
   onRightIcon?: () => void;
   labelStyle?: StyleProp<TextStyle>;
   label?: string;
-  placeholderColor?: string;
   rightText?: boolean | string;
   rightIconStyle?: StyleProp<ViewStyle>;
   editable?: boolean;

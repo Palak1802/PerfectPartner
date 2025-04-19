@@ -36,7 +36,7 @@ const FamilyDetail: React.FC = () => {
     <View style={styles.container}>
       <CustomStatusBar />
       <Header
-        title="Additional Photos"
+        title="Family Details"
         leftText
         onPressLeftText={onPressLeftText}
       />

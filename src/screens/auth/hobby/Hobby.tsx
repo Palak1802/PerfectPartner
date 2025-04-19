@@ -1,4 +1,4 @@
-import {View, Text, FlatList, TouchableOpacity} from 'react-native';
+import {View, Text, FlatList, TouchableOpacity, ScrollView} from 'react-native';
 import React from 'react';
 import styles from './hobby.style';
 import useHobby from './useHobby';
@@ -13,7 +13,9 @@ const Hobby: React.FC = () => {
         activeOpacity={0.7}
         onPress={() => onItemPress(item)}
         style={styles.itemContainer}>
-        <Text style={styles.itemTitleText}>{item.title}</Text>
+        <View style={{flex: 1}}>
+          <Text style={styles.itemTitleText}>{item.title}</Text>
+        </View>
       </TouchableOpacity>
     );
   };
@@ -21,16 +23,29 @@ const Hobby: React.FC = () => {
     <View style={styles.container}>
       <CustomStatusBar />
       <Header title="Hobby" leftText onPressLeftText={onPressLeftText} />
-      <Text>Now let's add your hobbies & interests</Text>
-      <Text>This will help find your better match</Text>
-      <FlatList
-        data={hobbiesList}
-        numColumns={3}
-        renderItem={renderItem}
-        contentContainerStyle={styles.flatlistContainer}
-        showsVerticalScrollIndicator={false}
-      />
-      <Button title="Continue" onPress={onContinue} />
+      <ScrollView
+        contentContainerStyle={styles.scrollContainer}
+        showsVerticalScrollIndicator={false}>
+        <Text style={styles.titleText}>
+          Now let's add your hobbies & interests
+        </Text>
+        <Text style={styles.detailText}>
+          This will help find your better match
+        </Text>
+        <FlatList
+          data={hobbiesList}
+          numColumns={3}
+          renderItem={renderItem}
+          contentContainerStyle={styles.flatlistContainer}
+          scrollEnabled={false}
+          showsVerticalScrollIndicator={false}
+        />
+        <Button
+          title="Continue"
+          onPress={onContinue}
+          containerStyle={styles.buttonContainer}
+        />
+      </ScrollView>
     </View>
   );
 };

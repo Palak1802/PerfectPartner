@@ -35,7 +35,7 @@ const Input: React.FC<InputProps> = props => {
           onChangeText={props.onChangeText}
           style={[style.input, props.inputStyle]}
           placeholder={props.placeholder}
-          placeholderTextColor={color.lightGrey && props.placeholderColor}
+          placeholderTextColor={color.grey75}
           allowFontScaling={false}
           autoCorrect={false}
           cursorColor={color.black}

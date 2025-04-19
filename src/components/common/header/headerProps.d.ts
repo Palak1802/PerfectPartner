@@ -8,5 +8,6 @@ interface HeaderProps {
   title?: string;
   backIcon?: () => void;
   onPressLeftText?: () => void;
-  leftText?: boolean;
+  rightText?: boolean;
+  leftIcon?: boolean;
 }

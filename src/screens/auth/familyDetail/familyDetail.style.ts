@@ -18,6 +18,8 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: color.black,
     fontFamily: fonts.montserratMedium,
+    marginHorizontal: 20,
+    marginTop: 8,
   },
   modalFlatlistItemText: {
     fontSize: 16,

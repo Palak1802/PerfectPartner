@@ -7,12 +7,17 @@ import Favourite from './svg/favourite';
 import Female from './svg/female';
 import Friend from './svg/friend';
 import Girl from './svg/girl';
+import Heart from './svg/heart';
 import HideEye from './svg/hideEye';
 import Home from './svg/home';
+import HomeBold from './svg/homeBold';
+import HomeRegular from './svg/homeRegular';
 import LeftArrowFill from './svg/leftArrowFill';
 import Male from './svg/male';
 import Menu from './svg/menu';
 import MultipleUser from './svg/multipleUser';
+import ProfileFocus from './svg/profileFocus';
+import ProfileUnfocus from './svg/profileUnfocus';
 import Search from './svg/search';
 import UnHideIcon from './svg/unHideEye';
 import UserIcon from './svg/userIcon';
@@ -36,4 +41,9 @@ export default {
   UserIcon,
   Close,
   Search,
+  HomeBold,
+  HomeRegular,
+  Heart,
+  ProfileFocus,
+  ProfileUnfocus,
 };

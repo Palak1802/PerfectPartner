@@ -5,4 +5,5 @@ export default {
   offWhite: '#F1F1F1',
   lightGrey: '#D3D3D3',
   error: '#FF0000',
+  grey75: '#757575',
 };

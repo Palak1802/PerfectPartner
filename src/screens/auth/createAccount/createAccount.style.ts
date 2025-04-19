@@ -1,6 +1,6 @@
 import {StyleSheet} from 'react-native';
-import color from '../../../theme/color';
 import fonts from '@theme/fonts';
+import color from '@theme/color';
 
 const styles = StyleSheet.create({
   container: {
@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
     fontFamily: fonts.montserratSemiBold,
   },
   flatlistItemTouch: {
-    backgroundColor: 'grey',
+    backgroundColor: color.lightGrey,
     marginTop: 15,
     marginRight: 8,
     width: '48%',
